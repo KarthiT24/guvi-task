@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // Function to get URL parameter by name
+        function getUrlParameter(name) {
+            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        var username = getUrlParameter('username');
+        if (username) {
+            console.log('Username:', username);
+            document.write('<h1>Welcome, ' + username + '!</h1>' + '<br><br>');
+
+            // Create a div with class "wrapper"
+            // var wrapperDiv = document.createElement('div');
+            // wrapperDiv.className = 'wrapper';
+
+            // // Get the reference to the welcome message
+            // var welcomeMessage = document.querySelector('h1');
+
+            // // Insert the wrapper div after the welcome message
+            // welcomeMessage.appendChild(wrapperDiv);
+        } else {
+            console.log('No username parameter found in the URL.');
+        }
+    </script>
+
+
+</body>
+
+</html>
